@@ -1,4 +1,14 @@
 version: '3.3'
 
-services: 
+services:
+
+    backend:
+        build: ../../code/backend
+        ports:
+            - 3000:3000
+
+    frontend:
+        build: ../../code/frontend
+        ports:
+            - 4200:80
     
