@@ -7,7 +7,7 @@
     "start": "ts-node --transpile-only src/server.ts",
     "dev": "nodemon --watch src --delay 1 --exec 'ts-node' src/server.ts",
     "build": "tsc",
-    "test": "jest --forceExit --detectOpenHandles",
+    "test": "jest --forceExit --detectOpenHandles --no-color",
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "dependencies": {
