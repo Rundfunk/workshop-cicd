@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+        label 'master'
+    }
+    stages {
+        stage('Undeploy') {
+            steps {                
+                dir('ci/code') {
+                        sh 'docker-compose -f docker-compose.yml down'
+                    }
+            }
+        }
+    }
+}
