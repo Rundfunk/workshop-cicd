@@ -8,6 +8,9 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
+                dir('code/backend') {
+                    sh 'npm install'
+                }
                 dir('code/frontend') {
                     sh 'npm install'
                 }
@@ -28,7 +31,12 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Analyze' 
+                dir('code/backend') {
+                    sh 'npm run lint'
+                }
+                dir('code/frontend') {
+                    sh 'npm run lint'
+                }
             }
         }
         stage('Unit Test') {
